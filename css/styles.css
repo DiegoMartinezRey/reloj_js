@@ -1,3 +1,14 @@
+:root {
+  --bg-color: black;
+  --second-color: white;
+  --border-clock: gray;
+  --color-seg: red;
+
+  --rotate-hour: 0;
+  --rotate-min: 0;
+  --rotate-seg: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,4 +32,101 @@ img {
 body {
   margin: 0;
   font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--second-color);
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  max-width: 900px;
+  border-radius: 15px;
+  border: 2px solid var(--second-color);
+  flex-wrap: wrap;
+}
+
+.container-digital {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.hour {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.date {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.container-analog {
+  background-color: var(--second-color);
+  border: 5px solid var(--border-clock);
+  border-radius: 50%;
+  position: relative;
+}
+
+.reloj-base {
+  width: 300px;
+}
+
+.center-clock {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+}
+
+.hour-stick {
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 3px);
+  height: 60px;
+  width: 6px;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  transform-origin: bottom;
+  rotate: var(--rotate-hour);
+}
+
+.min-stick {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 2px);
+  height: 100px;
+  width: 4px;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  transform-origin: bottom;
+  rotate: var(--rotate-min);
+}
+
+.seg-stick {
+  position: absolute;
+  top: calc(50% - 120px);
+  left: calc(50% - 1.5px);
+  height: 120px;
+  width: 3px;
+  border-radius: 5px;
+  background-color: var(--color-seg);
+  transform-origin: bottom;
+  rotate: var(--rotate-seg);
 }
